@@ -23,37 +23,60 @@ package calculadora;
 public class Calculadora {
 
     public static double sumar(double a, double b) {
-        return 0;
+        return a + b;
     }
 
     
     public static double restar(double a, double b) {
-        return 0;
+        return a - b;
     }
 
     
     public static double multiplicar(double a, double b) {
-        return 0;
+        return a * b;
     }
 
     
     public static double dividir(double a, double b) {
-        return 0;
+        return a / b;
     }
 
     
     public static double potencia(double base, int exp) {
-        return 0;
+        double x = 1;
+        for (int i = 0; i < exp; i++) {
+            x *= base;
+        }
+        return x;
     }
 
-
+    /**
+     * Método que calcula la raíz cuadrada de un número real mediante el 
+     * algoritmo babilónico. Que está basado en el hecho de que la raíz cuadrada 
+     * de un número real x es igual al lado de un cuadrado cuya area es igual a x.
+     * 
+     * @param x radicando
+     * @return raíz cuadrada de a
+     */
     public static double raiz(double x) {
-        return 0;
+        if (x < 0)
+            throw new IllegalArgumentException(
+            "La raíz de un número negativo no existe");
+        double a = x;
+        double b = 0;
+        /* No es necesario calcular el error, iterara hasta que el sistema no
+        sea capaz de representar mas decimales. Se puede hacer while(a != b) */
+        while (a != b) {
+            b = a;
+            a = (a + x / a) / 2;
+        }
+        return a;
     }
 
     
     public static double exponencial(int exp) {
-        return 0;
+        double e = 2.7182818284590452353602874713527;
+        return potencia(e, exp);
     }
     
 }

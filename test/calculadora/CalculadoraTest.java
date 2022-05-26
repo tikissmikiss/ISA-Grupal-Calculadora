@@ -120,7 +120,7 @@ public class CalculadoraTest {
         // Arrange
         double a[] =         { 1.0, -12.1, 23.2, -34.3, 45.4, -56.5, 67.6, -78.7,  0.898, -0.109 };
         double b[] =         { 2.0,   3.1, -4.2,   5.3,  6.4,  -7.5,  8.6,   9.7,  -1.08,  0.119 };
-        double expected[] = { -1.0, -15.2, 27.4, -39.6, 39.0,  49.0, 59.0, -88.4, -0.182, -0.228 };
+        double expected[] = { -1.0, -15.2, 27.4, -39.6, 39.0, -49.0, 59.0, -88.4,  1.978, -0.228 };
 
         // Act
         double actual[] = new double[a.length];
@@ -129,7 +129,7 @@ public class CalculadoraTest {
         }
 
         // Assert
-        assertArrayEquals(expected, actual, 0);
+        assertArrayEquals(expected, actual, 1e-13);
     }
 
     
@@ -147,7 +147,7 @@ public class CalculadoraTest {
         }
 
         // Assert
-        assertArrayEquals(expected, actual, 0);
+        assertArrayEquals(expected, actual, 1e-13);
     }
 
     
