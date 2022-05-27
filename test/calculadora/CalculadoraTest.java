@@ -110,8 +110,8 @@ public class CalculadoraTest {
             fail("No se ha lanzado la excepción para una raiz de un número negativo");
         } catch (Exception e) {
             assertEquals(expected.getMessage(), e.getMessage());
+            assertEquals(expected.getClass(), e.getClass());
         }
-
     }
 
     
