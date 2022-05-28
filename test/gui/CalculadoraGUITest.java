@@ -16,11 +16,11 @@ public class CalculadoraGUITest {
     @Test
     public void testHasButtons() {
         // Arrange
-        boolean true1=false, true2=false, true3=false, true4=false, true5=false, true6=false;
-        boolean true7=false, true8=false, true9=false, true0=false, truePunto=false;
-        boolean trueSuma=false, trueResta=false, trueMultiplicacion=false, trueDivision=false;
+        boolean true1 = false, true2 = false, true3 = false, true4 = false, true5 = false, true6 = false;
+        boolean true7 = false, true8 = false, true9 = false, true0 = false, truePunto = false;
+        boolean trueSuma = false, trueResta = false, trueMultiplicacion = false, trueDivision = false;
         boolean trueIgual = false, truePotencia = false, trueRaiz = false, trueExponencial = false;
-        
+
         // Act
         CalculadoraGUI gui = new CalculadoraGUI();
 
@@ -91,6 +91,13 @@ public class CalculadoraGUITest {
         assertTrue(trueExponencial);
     }
 
+    /**
+     * Recorre todos los componentes de una estructura de componentes y
+     * devuelve una lista con todos los componentes encontrados.
+     * 
+     * @param c contenedor raiz
+     * @return lista con todos los componentes encontrados
+     */
     private ArrayList<Component> getAllComponents(Container c) {
         ArrayList<Component> components = new ArrayList<Component>();
         Stack<Component> stack = new Stack<Component>();
