@@ -73,10 +73,28 @@ public class Calculadora {
         return a;
     }
 
-    
-    public static double exponencial(int exp) {
-        double e = 2.7182818284590452353602874713527;
-        return potencia(e, exp);
+    /**
+     * Calcula la funcion exponencial mediante la serie de Taylor.
+     * 
+     * @param x exponente
+     * @return exponencial de x (e^x)
+     */
+    public static double exponencial(double x) {
+        double suma = 0, b = 0;
+        int n = 1;
+        do {
+            b = suma;
+            suma += potencia(x, n) / factorial(n);
+            n++;
+        } while (b != suma); // Hasta que no puede representar mas decimales
+        return suma + 1;
+    }
+
+    private static double factorial(int n) {
+        double fact = 1;
+        for (int i = 1; i <= n; i++) 
+            fact *= i;
+        return fact;
     }
     
 }
