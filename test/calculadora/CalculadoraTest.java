@@ -154,16 +154,16 @@ public class CalculadoraTest {
     @Test
     public void testExponencial() {
         // Arrange
-        int n = 20;
-        double expected[] = new double[n];
-        for (int i = 0; i < n; i++) {
-            expected[i] = Math.exp(i);
+        double a[] = { 1.0, 2.1, 3.2, 4.3, 5.4, 6.5, -7.6, 8.7, 0.898, -0.109 };
+        double expected[] = new double[a.length];
+        for (int i = 0; i < a.length; i++) {
+            expected[i] = (double)Math.exp( a[i] );
         }
 
         // Act
-        double actual[] = new double[n];
-        for (int i = 0; i < n; i++) {
-            actual[i] = (double)Calculadora.exponencial(i);
+        double actual[] = new double[a.length];
+        for (int i = 0; i < a.length; i++) {
+            actual[i] = (double)Calculadora.exponencial( a[i] );
         }
 
         // Assert
